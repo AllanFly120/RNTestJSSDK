@@ -16,6 +16,7 @@ export class TranscribeFromAudio extends Component {
     };
     this.transcribeClient = new TranscribeStreamingClient({
       region: REGION,
+      //should use static credentials here
       credentials: fromCognitoIdentityPool({
         client: new CognitoIdentityClient({
           region: REGION,
@@ -48,7 +49,7 @@ export class TranscribeFromAudio extends Component {
     async function* input() {
       while (!self.audioStreamDone) {
         await new Promise(resolve => {
-          setTimeout(resolve, 10);
+          setTimeout(resolve, 100);
         });
         yield Promise.resolve({
           AudioEvent: {AudioChunk: Uint8Array.from([1,1,1,1,1,1,1,1])}
