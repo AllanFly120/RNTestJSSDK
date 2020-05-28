@@ -24,7 +24,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import {TextInANest} from './components/s3';
+// import {TextInANest} from './components/s3';
+import {TranscribeFromAudio} from './components/transcribe-streaming';
 
 const App = () => {
   return (
@@ -42,7 +43,7 @@ const App = () => {
           )}
           <View style={styles.body}>
             <View>
-              <TextInANest />
+              <TranscribeFromAudio />
             </View>
           </View>
         </ScrollView>

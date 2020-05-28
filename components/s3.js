@@ -43,7 +43,7 @@ export class TextInANest extends Component {
         Bucket: BUCKET,
       }),
     );
-    this.setState({bodyText: JSON.stringify(result.Contents)});
+    this.setState({bodyText: JSON.stringify(result)});
   }
 }
 
